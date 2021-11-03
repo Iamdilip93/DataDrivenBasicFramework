@@ -1,0 +1,18 @@
+It looks like you need to add the location of your log4j.properties file to the Classpath in Eclipse.
+
+Make sure your project is open in Eclipse, then click on the "Run" menu at the top of Eclipse and click on the following:
+
+Run
+Run Configurations
+Classpath (tab)
+User Entries
+Advanced (button on the right)
+Add Folders
+then navigate to the folder that contains your log4j.properties file
+Apply
+Run
+The error message should no longer appear.
+
+
+
+And All logs properly comes with selenium 2.53.1 version
