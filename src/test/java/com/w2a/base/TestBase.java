@@ -16,6 +16,8 @@ import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.ie.InternetExplorerDriver;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
+import org.testng.Assert;
+import org.testng.Reporter;
 import org.testng.annotations.AfterSuite;
 import org.testng.annotations.BeforeSuite;
 
@@ -24,6 +26,7 @@ import com.relevantcodes.extentreports.ExtentTest;
 import com.relevantcodes.extentreports.LogStatus;
 import com.w2a.utilities.ExcelReader;
 import com.w2a.utilities.ExtentManager;
+import com.w2a.utilities.TestUtil;
 
 public class TestBase {
 	
@@ -138,6 +141,30 @@ public class TestBase {
 
 	
 	}
+	
+	public static void verfyEquals(String expected,String actual) throws IOException {
+		
+		try {
+			
+			Assert.assertEquals(actual, expected);
+		} catch (Throwable e) {
+			TestUtil.captureScreenshot();
+			
+			//ReportNG
+			Reporter.log("<br>"+"Verification Failure : "+e.getMessage()+"<br>");
+			Reporter.log("<a target =\"_blank\" href="+TestUtil.screenshotName+"><img src="+TestUtil.screenshotName+" height=300 width=300></img></a>");
+			Reporter.log("<br>");
+			Reporter.log("<br>");
+			
+			//ExtentReports
+			test.log(LogStatus.FAIL, "Verification FAILED With Exception : "+e.getMessage());
+			test.log(LogStatus.FAIL,test.addScreenCapture(TestUtil.screenshotName));
+
+			
+		}
+		
+	}
+	
 	
 	public boolean isElementPresent(By by) {
 		try {
