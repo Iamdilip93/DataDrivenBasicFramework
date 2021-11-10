@@ -7,13 +7,23 @@ import java.util.Properties;
 import java.util.concurrent.TimeUnit;
 
 import org.apache.log4j.Logger;
+import org.openqa.selenium.By;
+import org.openqa.selenium.NoSuchElementException;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.edge.EdgeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.ie.InternetExplorerDriver;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.annotations.AfterSuite;
 import org.testng.annotations.BeforeSuite;
+
+import com.relevantcodes.extentreports.ExtentReports;
+import com.relevantcodes.extentreports.ExtentTest;
+import com.relevantcodes.extentreports.LogStatus;
+import com.w2a.utilities.ExcelReader;
+import com.w2a.utilities.ExtentManager;
 
 public class TestBase {
 	
@@ -37,7 +47,10 @@ public class TestBase {
 	public static Properties OR=new Properties();
 	public static FileInputStream fis;
 	public static Logger log=Logger.getLogger("devpinoyLogger");
-	
+	public static ExcelReader excel=new ExcelReader(System.getProperty("user.dir")+"\\src\\test\\resources\\Excel\\testdata.xlsx");
+	public static WebDriverWait wait;
+	public ExtentReports rep=ExtentManager.getInstance();
+	public static ExtentTest test;
 	
 	@BeforeSuite
 	public void setUp()  {
@@ -90,10 +103,53 @@ public class TestBase {
 		    log.debug("Navigated To ---->"+config.getProperty("testsiteurl"));
 		    driver.manage().window().maximize();
 		    driver.manage().timeouts().implicitlyWait(Integer.parseInt(config.getProperty("implicit.Wait")),TimeUnit.SECONDS); 
+		    wait=new WebDriverWait(driver, 10);
+		    
 		    
 		}
 		
 	}
+	
+	
+	
+	public void click(String locator) {
+
+		if (locator.endsWith("_CSS")) {
+			driver.findElement(By.cssSelector(OR.getProperty(locator))).click();
+		} else if (locator.endsWith("_XPATH")) {
+			driver.findElement(By.xpath(OR.getProperty(locator))).click();
+		} else if (locator.endsWith("_ID")) {
+			driver.findElement(By.id(OR.getProperty(locator))).click();
+		}
+		test.log(LogStatus.INFO, "Clicking on : " + locator);
+	}
+
+	public void type(String locator, String value) {
+
+		if (locator.endsWith("_CSS")) {
+			driver.findElement(By.cssSelector(OR.getProperty(locator))).sendKeys(value);
+		} else if (locator.endsWith("_XPATH")) {
+			driver.findElement(By.xpath(OR.getProperty(locator))).sendKeys(value);
+		} else if (locator.endsWith("_ID")) {
+			driver.findElement(By.id(OR.getProperty(locator))).sendKeys(value);
+		}
+
+		test.log(LogStatus.INFO, "Typing in : " + locator + " entered value as " + value);
+
+	
+	}
+	
+	public boolean isElementPresent(By by) {
+		try {
+			driver.findElement(by);
+			return true;
+		} catch (NoSuchElementException e) {
+			return false;
+		}
+		
+	}
+	
+	
 	
 	@AfterSuite
 	public void tearDown() {

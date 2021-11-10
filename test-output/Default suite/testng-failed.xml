@@ -3,13 +3,13 @@
 <suite guice-stage="DEVELOPMENT" name="Failed suite [Default suite]">
   <test thread-count="5" name="Default test(failed)">
     <classes>
-      <class name="com.w2a.testcases.LoginTest">
+      <class name="com.w2a.testcases.AddCustomerTest">
         <methods>
-          <include name="setUp"/>
-          <include name="loginAsBankManager"/>
           <include name="tearDown"/>
+          <include name="setUp"/>
+          <include name="addCustomerTest" invocation-numbers="0"/>
         </methods>
-      </class> <!-- com.w2a.testcases.LoginTest -->
+      </class> <!-- com.w2a.testcases.AddCustomerTest -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->

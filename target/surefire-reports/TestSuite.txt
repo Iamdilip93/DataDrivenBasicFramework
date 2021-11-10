@@ -1,4 +1,14 @@
 -------------------------------------------------------------------------------
 Test set: TestSuite
 -------------------------------------------------------------------------------
-Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 11.655 sec - in TestSuite
+Tests run: 2, Failures: 2, Errors: 0, Skipped: 0, Time elapsed: 21.459 sec <<< FAILURE! - in TestSuite
+loginAsBankManager(com.w2a.testcases.BankManagerLoginTest)  Time elapsed: 3.724 sec  <<< FAILURE!
+java.lang.AssertionError: Login not Successfull
+	at org.testng.Assert.fail(Assert.java:97)
+	at com.w2a.testcases.BankManagerLoginTest.loginAsBankManager(BankManagerLoginTest.java:24)
+
+addCustomerTest(com.w2a.testcases.AddCustomerTest)  Time elapsed: 7.378 sec  <<< FAILURE!
+java.lang.AssertionError: Customer Not Added Successfully  !!!
+	at org.testng.Assert.fail(Assert.java:97)
+	at com.w2a.testcases.AddCustomerTest.addCustomerTest(AddCustomerTest.java:30)
+
