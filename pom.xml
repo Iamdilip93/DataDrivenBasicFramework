@@ -15,13 +15,13 @@
 		</dependency>
 
 
-		 <!-- https://mvnrepository.com/artifact/org.testng/testng -->
+		<!-- https://mvnrepository.com/artifact/org.testng/testng -->
 		<dependency>
 			<groupId>org.testng</groupId>
 			<artifactId>testng</artifactId>
 			<version>7.0.0</version>
 			<scope>test</scope>
-		</dependency> 
+		</dependency>
 
 
 		<!-- https://mvnrepository.com/artifact/com.relevantcodes/extentreports -->
@@ -40,11 +40,11 @@
 
 
 		<!-- https://mvnrepository.com/artifact/com.google.guava/guava -->
-<dependency>
-    <groupId>com.google.guava</groupId>
-    <artifactId>guava</artifactId>
-    <version>23.0</version>
-</dependency>
+		<dependency>
+			<groupId>com.google.guava</groupId>
+			<artifactId>guava</artifactId>
+			<version>23.0</version>
+		</dependency>
 
 
 
@@ -150,6 +150,16 @@
 			</plugin>
 
 		</plugins>
+
+		<testResources>
+			<testResource>
+				<directory>src/test/resources/properties</directory>
+				<includes>
+					<include>log4j.properties</include>
+				</includes>
+			</testResource>
+		</testResources>
+
 	</build>
 
 

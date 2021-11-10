@@ -8,10 +8,11 @@ import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
 
 import com.w2a.base.TestBase;
+import com.w2a.utilities.TestUtil;
 
 public class AddCustomerTest extends TestBase {
 
-	@Test(dataProvider = "getData")
+	@Test(dataProviderClass =TestUtil.class,dataProvider = "dp" )
 	public void addCustomerTest(String firstName,String lastName,String postCode,String alertText) throws InterruptedException {
 		
 		click("addCustBtn_CSS");

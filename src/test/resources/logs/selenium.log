@@ -1,4 +1,15 @@
-21:02:00,798 DEBUG devpinoyLogger:66 - Config File is Loaded !!!!!!!!
-21:02:00,801 DEBUG devpinoyLogger:78 - OR File is Loaded !!!!!!!!
-21:02:04,120 DEBUG devpinoyLogger:86 - Chrome Launched !!!!!!!!
-21:02:07,056 DEBUG devpinoyLogger:102 - Navigated To ---->https://www.way2automation.com/angularjs-protractor/banking/#/login
+00:19:31,860 DEBUG devpinoyLogger:67 - Config File is Loaded !!!!!!!!
+00:19:31,864 DEBUG devpinoyLogger:79 - OR File is Loaded !!!!!!!!
+00:19:34,594 DEBUG devpinoyLogger:87 - Chrome Launched !!!!!!!!
+00:19:38,776 DEBUG devpinoyLogger:103 - Navigated To ---->https://www.way2automation.com/angularjs-protractor/banking/#/login
+00:19:39,172 DEBUG cache:44 - Couldn't find template in cache for "Extent.ftl"("en_IN", UTF-8, parsed); will try to load it.
+00:19:39,173 DEBUG cache:44 - TemplateLoader.findTemplateSource("Extent_en_IN.ftl"): Not found
+00:19:39,175 DEBUG cache:44 - TemplateLoader.findTemplateSource("Extent_en.ftl"): Not found
+00:19:39,176 DEBUG cache:44 - TemplateLoader.findTemplateSource("Extent.ftl"): Found
+00:19:39,176 DEBUG cache:44 - Loading template for "Extent.ftl"("en_IN", UTF-8, parsed) from "jar:file:/C:/Users/Shree/.m2/repository/com/relevantcodes/extentreports/2.41.2/extentreports-2.41.2.jar!/com/relevantcodes/extentreports/view/Extent.ftl"
+00:19:49,784 DEBUG cache:44 - Couldn't find template in cache for "Extent.ftl"("en_IN", UTF-8, parsed); will try to load it.
+00:19:49,785 DEBUG cache:44 - TemplateLoader.findTemplateSource("Extent_en_IN.ftl"): Not found
+00:19:49,785 DEBUG cache:44 - TemplateLoader.findTemplateSource("Extent_en.ftl"): Not found
+00:19:49,786 DEBUG cache:44 - TemplateLoader.findTemplateSource("Extent.ftl"): Found
+00:19:49,786 DEBUG cache:44 - Loading template for "Extent.ftl"("en_IN", UTF-8, parsed) from "jar:file:/C:/Users/Shree/.m2/repository/com/relevantcodes/extentreports/2.41.2/extentreports-2.41.2.jar!/com/relevantcodes/extentreports/view/Extent.ftl"
+00:19:50,859 DEBUG devpinoyLogger:160 - Test Execution Completed  !!!! 

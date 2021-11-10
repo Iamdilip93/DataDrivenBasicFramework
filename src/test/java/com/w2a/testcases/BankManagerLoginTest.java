@@ -12,7 +12,7 @@ public class BankManagerLoginTest extends TestBase{
 	@Test
 	public void loginAsBankManager() throws InterruptedException {
 		
-		
+		Assert.assertEquals("abc","xyz");
 		log.debug("Inside Login Test");
 		click("bmlBtn_CSS");
 		Thread.sleep(2000);
