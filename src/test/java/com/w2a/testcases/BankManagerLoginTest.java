@@ -15,7 +15,7 @@ public class BankManagerLoginTest extends TestBase{
 		
 		log.debug("Inside Login Test");
 		click("bmlBtn_CSS");
-		Thread.sleep(3000);
+		Thread.sleep(2000);
 		
 		Assert.assertTrue(isElementPresent(By.cssSelector(OR.getProperty("addCustBtn_CSS"))),"Login Not Successfull  !!!");
 		
