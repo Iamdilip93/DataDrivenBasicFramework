@@ -56,6 +56,7 @@ public class TestBase {
 	public static WebDriverWait wait;
 	public ExtentReports rep=ExtentManager.getInstance();
 	public static ExtentTest test;
+	public static String browser;
 	
 	@BeforeSuite
 	public void setUp()  {
@@ -86,6 +87,16 @@ public class TestBase {
 				e.printStackTrace();
 			}
 
+		    
+		    
+		    if(System.getenv("browser")!=null && !System.getenv("browser").isEmpty() ) {
+		    	browser=System.getenv("browser");
+		    }else {
+				browser=config.getProperty("browser");
+			}
+		    
+		    config.setProperty("browser", browser);
+		    
 		    if(config.getProperty("browser").equalsIgnoreCase("chrome")) {
 		    	System.setProperty("webdriver.chrome.driver",System.getProperty("user.dir")+"\\src\\test\\resources\\Executables\\chromedriver.exe");
 		    	driver=new ChromeDriver();
