@@ -12,7 +12,7 @@ import com.w2a.base.TestBase;
 public class BankManagerLoginTest extends TestBase{
 	
 	@Test
-	public void loginAsBankManager() throws InterruptedException, IOException {
+	public void bankManagerLoginTest() throws InterruptedException, IOException {
 		
 		verfyEquals("abc","xyz");
 		Thread.sleep(2000);
@@ -24,7 +24,7 @@ public class BankManagerLoginTest extends TestBase{
 		
 		log.debug("Login Successfully Executed");
 		
-		Assert.fail("Login not Successfull");
+		
 		
 				
 	}

@@ -4,6 +4,7 @@ import org.openqa.selenium.Alert;
 import org.openqa.selenium.By;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.testng.Assert;
+import org.testng.SkipException;
 import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
 
@@ -13,7 +14,11 @@ import com.w2a.utilities.TestUtil;
 public class AddCustomerTest extends TestBase {
 
 	@Test(dataProviderClass =TestUtil.class,dataProvider = "dp" )
-	public void addCustomerTest(String firstName,String lastName,String postCode,String alertText) throws InterruptedException {
+	public void addCustomerTest(String firstName,String lastName,String postCode,String alertText,String runmode) throws InterruptedException {
+		
+		if(!runmode.equals("Y")) {
+			throw new SkipException("Skipping The Test Case as Runmode For Data is No");
+		}
 		
 		click("addCustBtn_CSS");
 		type("firstname_CSS",firstName);
@@ -24,11 +29,10 @@ public class AddCustomerTest extends TestBase {
 		Alert alert=wait.until(ExpectedConditions.alertIsPresent());
 		
 		Assert.assertTrue(alert.getText().contains(alertText));
-		Thread.sleep(2000);
+		Thread.sleep(1000);
 		alert.accept();
 		Thread.sleep(2000);
 		
-		Assert.fail("Customer Not Added Successfully  !!!");
 	}
 	
 	

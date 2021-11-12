@@ -19,6 +19,13 @@
 			<class name="com.w2a.testcases.AddCustomerTest" />
 		</classes>
 	</test> <!-- Add Customer Test -->
+	
+	
+	<test  name="Open Account Test">
+		<classes>
+			<class name="com.w2a.testcases.OpenAccountTest" />
+		</classes>
+	</test> <!-- Add Customer Test -->
 
 
 </suite> <!-- Suite -->
