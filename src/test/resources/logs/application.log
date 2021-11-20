@@ -1,6 +1,7 @@
-12/11/2021 19:34:46 devpinoyLogger Config File is Loaded !!!!!!!!
-12/11/2021 19:34:46 devpinoyLogger OR File is Loaded !!!!!!!!
-12/11/2021 19:35:26 devpinoyLogger Navigated To ---->https://www.way2automation.com/angularjs-protractor/banking/#/login
-12/11/2021 19:35:30 devpinoyLogger Inside Login Test
-12/11/2021 19:35:32 devpinoyLogger Login Successfully Executed
-12/11/2021 19:35:56 devpinoyLogger Test Execution Completed  !!!! 
+20/11/2021 21:29:52 devpinoyLogger Config File is Loaded !!!!!!!!
+20/11/2021 21:29:52 devpinoyLogger OR File is Loaded !!!!!!!!
+20/11/2021 21:29:56 devpinoyLogger Chrome Launched !!!!!!!!
+20/11/2021 21:30:00 devpinoyLogger Navigated To ---->https://www.way2automation.com/angularjs-protractor/banking/#/login
+20/11/2021 21:30:02 devpinoyLogger Inside Login Test
+20/11/2021 21:30:05 devpinoyLogger Login Successfully Executed
+20/11/2021 21:30:25 devpinoyLogger Test Execution Completed  !!!! 
